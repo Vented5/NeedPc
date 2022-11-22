@@ -3,6 +3,9 @@
 
 }
 
-.mt-auto {
-    margin-top: auto!important;
+.bg-image {
+    background-image: url("images/pexels-photo-2182863.jpeg");
+    background-size: contain;
+    background-position: center;
+
 }
