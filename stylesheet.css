@@ -1,6 +1,7 @@
+/*Aqui agruegue las clases que no se importaron con el link de bootstrap*/
 .cover-container {
     max-width: 42em;
-
+    background-color: rgb(206, 156, 48);
 }
 
 .bg-image {
