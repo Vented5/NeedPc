@@ -1,29 +1,25 @@
-/*Aqui agruegue las clases que no se importaron con el link de bootstrap*/
-.cover-container {
-    max-width: 42em;
-    background-color: rgb(206, 156, 48);
-}
+@import url(../TestConexion/Bootstrap/css/bootstrap-utilities.css);
 
 .bg-image {
-    background-image: url("images/pexels-photo-2182863.jpeg");
-    background-size: contain;
+    background-image: url("images/pexels-photo-6432056.jpeg");
+    background-size:cover;
     background-position: center;
 
 }
 
-.pregresp {
-    border: 1px solid #7DA5E0;
-    padding: 10px;
-    margin: 10px;
-    font-family: Arial, Verdana, Helvetica, sans-serif;
-    font-size: 15px;
-    font-weight: bold;
-    }
-    
-    .pregunta {
-    color: #7DA5E0;
-    }
-    
-    .respuestas {
-    color: #000000;
-    }
+
+.primary{
+    background-color: #3660A8 !important;
+}
+.secondary{
+    background-color: #1D2333 !important;
+}
+.important{
+    background-color: #27C9DB !important;
+}
+.warning{
+    background-color: #E09272 !important;
+}
+.danger{
+    background-color: #A8220D !important;
+}
