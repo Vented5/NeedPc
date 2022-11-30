@@ -1,5 +1,5 @@
 @import url(Bootstrap/css/bootstrap-utilities.css);
-
+@import url(Bootstrap/css/bootstrap.css);
 .bg-image {
     background-image: url("images/pexels-photo-6432056.jpeg");
     background-size:cover;
@@ -28,8 +28,13 @@
 }
 
 .mx-custom {
-    margin-left: 10rem !important;
-    margin-right: 10rem !important;
+    min-width: 50rem;
+    max-width: 75rem;
+    align-self: center;
+}
+
+.nav-custom{
+    border-bottom: 3px solid red !important;
 }
 
 .table {

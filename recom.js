@@ -1,3 +1,3 @@
-var budget = document.getElementById("");
+var budget = document.getElementById("tfBudget");
 
-alert("Wenas nocheeees  ");
+alert("Wenas noches, el valor es: " + budget);
