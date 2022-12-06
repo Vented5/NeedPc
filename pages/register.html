@@ -1,14 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>NeedPc-Register</title>
     <link rel="stylesheet" href="../stylesheet.css">
 </head>
 <body class="bg-image">    
-    <form action="../php/login.php" method="post">  
+    <form action="../php/register.php" method="post">  
         <section class="vh-100 gradient-custom">
             <div class="container py-5 h-100">
               <div class="row d-flex justify-content-center align-items-center h-100">
@@ -18,27 +19,34 @@
           
                       <div class="d-flex flex-column">
                         <div class="d-flex align-items-center mx-auto mb-3">
-                          <a href="../index.php">
                             <img src="../images/icons8-nfc-n-60.png" class="flex-img" alt="">
-                        </a>
-                          <h1 class="d-flex">NeedPc?</h1>
+                            <h1 class="d-flex">NeedPc?</h1>
                         </div>
-                        <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-                        <p class="text-white-50 mb-5">Please enter your login and password!</p>
+                        <h2 class="fw-bold mb-2 text-uppercase">Register</h2>
+                        <p class="text-white-50 mb-5">Please enter your email and create a password!</p>
           
                         <div class="form-outline form-white mb-4">
-                          <input type="email" id="email-login" name="email-login" class="form-control form-control-lg" />
-                          <label class="form-label" for="typeEmailX">Email</label>
+                            <input type="text" id="user-name" name="user-name" class="form-control form-control-lg" />
+                            <label class="form-label" for="user-name">Username</label>
+                          </div>
+
+                        <div class="form-outline form-white mb-4">
+                          <input type="email" id="user-email" name="user-email" class="form-control form-control-lg" />
+                          <label class="form-label" for="user-email">Email</label>
                         </div>
           
                         <div class="form-outline form-white mb-4">
-                          <input type="password" id="pwd-login" name="pwd-login" class="form-control form-control-lg" />
-                          <label class="form-label" for="typePasswordX">Password</label>
+                          <input type="password" id="user-pwd" name="user-pwd" class="form-control form-control-lg" />
+                          <label class="form-label" for="user-pwd">Password</label>
                         </div>
-          
-                        <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
-          
-                        <button class="btn btn-outline-light btn-lg px-5" id="btn-login" name="btn-login" type="submit">Login</button>
+
+                        <div class="form-outline form-white mb-4">
+                            <input type="password" id="confirmPassword" name="confirmPassword" class="form-control form-control-lg" />
+                            <label class="form-label" for="typePasswordX">Confirm password</label>
+                          </div>
+                          
+                          
+                        <button id="btn-register" name="btn-register" class="btn btn-outline-light btn-lg px-5" type="submit">Register</button>
           
                         <div class="d-flex justify-content-center text-center mt-4 pt-1">
                           <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
@@ -49,7 +57,7 @@
                       </div>
           
                       <div>
-                        <p class="mb-0">Don't have an account? <a href="register.html" class="text-white-50 fw-bold">Sign Up</a>
+                        <p class="mb-0">Do you have an account? <a href="login.html" class="text-white-50 fw-bold">Log in</a>
                         </p>
                       </div>
           

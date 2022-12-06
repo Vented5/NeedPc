@@ -1,3 +1,7 @@
-var budget = document.getElementById("tfBudget");
-
-alert("Wenas noches, el valor es: " + budget);
+$(document).ready(function () {
+    $('.radio-group .radio').click(function () {
+        $('.selected .fa').removeClass('fa-check');
+        $('.radio').removeClass('selected');
+        $(this).addClass('selected');
+    });
+});

@@ -1,6 +1,14 @@
 <?php
-    include("../php/conexion.php");
+  session_start();
+  if(!isset($_SESSION["email"])){
+    $userImage = "../images/icons8-nombre-64.png";
+    $userName = "Guest1";
+  } else {
+    $userImage = "../images/". $_SESSION["user_image"];
+    $userName = $_SESSION['username'];
+  }
 ?>
+
 <!DOCTYPE html>
 <html lang="en" class="d-flex h-100 html">
     <head>
@@ -10,17 +18,50 @@
         <title>Recomendaciones</title>
         <link rel="stylesheet" href="../stylesheet.css">
     </head>
-    <body class="d-flex w-100 m-0 bg-image flex-column">
+    <body class="d-flex container-fluid p-0 bg-image flex-column">
         <!-- ///////////   NAVBAR    // //////////////////  -->
-        <nav class=" d-flex border-bottom border-primary bg-dark">
-            <div class="d-flex w-100 p-2 align-items-center">
-                <img src="../images/icons8-nfc-n-60.png">
-                <h1 class="mx-3 fs-3 text-white">NeedPc?</h1>
-                <a href="pages/login.html" class="ms-auto" style="width: 64px;height: 64px;">
-                    <img src="../images/icons8-user-64.png" alt="profile">
-                </a>
-            </div>
-        </nav>
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark border-bottom border-primary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="../index.php">
+                        <img src="../images/icons8-nfc-n-40.png" alt="">
+                        NeedPc?</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
+                    </li>
+                    <!--<li class="nav-item">
+                        <a class="nav-link" href="#">Catalogue</a>
+                    </li>-->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.php">Profile</a>
+                    </li>
+                    </ul>
+                    <!--
+                    <form class="d-flex my-auto" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+            -->     <H4><?php echo $userName;?></H4>
+                    <div class="dropdown">
+                    <a class="btn btn-dark dropdown-toggle ms-4 me-2" href="profile.php" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="<?php echo $userImage?>" class="userImgNav flex-img rounded-circle" alt="useer-image">
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="profile.php">Profile</a></li>
+                        <li><a id="logout" class="dropdown-item" href="../php/logout.php">Log out</a></li>
+                    </ul>
+                    </div>
+                    
+                </div>
+                </div>
+            </nav>
+            </header>
 
         <div id="main" class="bg-dark h-100 p-5 mx-custom text-white">
 
@@ -31,17 +72,50 @@
                 
 
                 <!-- NECESSITY -->
+                
                 <h2>Select a necessity</h2>
-                
-                    <label for="videoGames">Video Games</label>
-                    <input type="radio" name="necessity" value="videoGames">
-                    <label for="streaming">Streaming</label>
-                    <input type="radio" name="necessity" value="streaming">
-                    <label for="dessign">Design</label>
-                    <input type="radio" name="necessity" value="design">
-                    <label for="office">Office</label>
-                    <input type="radio" name="necessity" value="videoGames">
-                
+                    <div class="radio-group row justify-content-between px-3 text-center a">
+                        <div class="col-auto mr-sm-2 mx-2 card-block  py-0 text-center radio selected">
+                            <div class="flex-row">
+                                    <div class="col">
+                                        <div class="pic"> <img class="irc_mut img-fluid" src="../images/icons8-control-64.png" width="100" height="100"> </div>
+                                        <p>VideoGames</p>
+                                        <input type="radio" name="necessity" value="videoGames">
+                                    </div>
+                                </div>
+                            </div>    
+                        <div class="col-auto mr-sm-2 mx-2 card-block  py-0 text-center radio selected">
+                            <div class="flex-row">
+                                    <div class="col">
+                                        <div class="pic"> <img class="irc_mut img-fluid" src="../images/icons8-streaming-64.png" width="100" height="100"> </div>
+                                        <p>Streaming</p>
+                                        <input type="radio" name="necessity" value="streaming">
+                                    </div>
+                                </div>
+                            </div>    
+                        <div class="col-auto mr-sm-2 mx-2 card-block  py-0 text-center radio selected" >
+                            <div class="flex-row">
+                                    <div class="col">
+                                        <div class="pic"> <img class="irc_mut img-fluid" src="../images/icons8-diseño-64.png" width="100" height="100"> </div>
+                                        <p>Diseno</p>
+                                        <input type="radio" name="necessity" value="design">
+                                    </div>
+                                </div>
+                            </div>    
+                        <div class="col-auto mr-sm-2 mx-2 card-block  py-0 text-center radio selected" >
+                            <div class="flex-row">
+                                    <div class="col">
+                                        <div class="pic"> <img class="irc_mut img-fluid" src="../images/icons8-oficina-en-casa-100.png" width="100" height="100"> </div>
+                                        <p>Office</p>
+                                        <input type="radio" name="necessity" value="office">
+                                    </div>
+                                </div>
+                            </div>    
+                        
+                       
+                        
+                    </div>
+                    
                 <!-- BUDGET -->
                 <h2>Select a budget</h2>
                 
@@ -54,18 +128,9 @@
 
                 <input type="text" name="mm" id="tfBudget">
 
-                <!--
-                <SELect name="type">
-                    <option value="cpu">CCPU</option>
-                    <option value="motherboards">MOTHERBOARD</option>
-                    <option value="ram">RAM</option>
-                    <option value="sto">STO</option>
-                    <option value="gpu">GPU</option>
-                    <option value="psu">PSU</option>
-                </SELect>
-                -->
-             
-                <BUTton name="btn">Need</BUTton>                
+                <div class="d-flex align-self-center">
+                    <BUTton class="m-3 btn btn-lg btn-primary" name="btn">Show components</BUTton>                
+                </div>
             </form>
            
             <?php
@@ -149,8 +214,56 @@
                     $stoType = "HDD";
                     $stoI = new Storage_units(); 
                     $stoI->querySto($rvSto, $stoType);
-                                        
-                    echo "El modelo del cou es: " . $cpuI->cpu_model . "<br>El modelo de la gpu es: " . $gpuI->model . "<br>La Motherboard sera: ". $moboI->model , "<br>La fuente sera: " . $psuI->model . "<br>La ram sera: ". $ramI->brand . $ramI->capacity . "GB<br>El almacenamiento sera: ".$stoI->brand." ".$stoI->model.$stoI->capacity;
+
+                echo "
+                    <div class='d-flex flex-column container'>
+                        <h4>".$cpuI->cpu_brand." ".$cpuI->cpu_model."</h4>
+                         $". $cpuI->cpu_price." USD estimated
+                        <img class='flex-img imgComponent' src='../images/components/cpu/".$cpuI->img."'>
+                    </div>
+                
+                ";
+
+
+
+                    echo "
+                    <table class='table text-white'>
+                        <thead >
+                            <tr>
+                                <th class='th scope'>Component</th>
+                                <th class='th scope'>Image</th>
+                                <th class='th scope'>Name</th>
+                                <th class='th scope'>Description</th>
+                                <th class='th scope'>Price</th>
+                                <th class='th scope'>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class='td'>
+                                    CPU
+                                </td>
+                                <td class='td'>
+                                    <img src='#' alt='#CPUimg'>
+                                </td>
+                                <td class='td'>
+                                    ". $cpuI->cpu_brand . $cpuI->cpu_model ."
+                                </td>
+                                <td class='td'>
+                                    ".$cpuI->cpu_cores.$cpuI->cpu_threads.$cpuI->cpu_frequency."
+                                </td>
+                                <td class='td'>
+                                    ".$cpuI->cpu_price."
+                                </td>
+                                <td class='td'>
+                                    ".$cpuI->cpu_score."
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    
+                    El modelo del cou es: " . $cpuI->cpu_model . "<br>El modelo de la gpu es: " . $gpuI->model . "<br>La Motherboard sera: ". $moboI->model , "<br>La fuente sera: " . $psuI->model . "<br>La ram sera: ". $ramI->brand . $ramI->capacity . "GB<br>El almacenamiento sera: ".$stoI->brand." ".$stoI->model.$stoI->capacity;
                     
                     
                 }
@@ -178,13 +291,13 @@
                 class Processor {
                     public $cpu_id, $cpu_brand, $cpu_model, $cpu_socket, $cpu_cores, $cpu_threads, $cpu_frequency, 
                     $cpu_memoryType, $cpu_includesGpu, $cpu_gpuModel, $cpu_gpuShaders, $cpu_gpuFrequency, $cpu_price, 
-                    $cpu_score, $cpu_consumption, $cpu_gen;
+                    $cpu_score, $cpu_consumption, $cpu_gen, $img;
 
-                    function setValues($id, $b, $m, $s, $c, $t, $f, $mt, $iG, $gM, $gS, $gF, $p, $sc, $cons, $g){
+                    function setValues($id, $b, $m, $s, $c, $t, $f, $mt, $iG, $gM, $gS, $gF, $p, $sc, $cons, $g, $im){
                         $this->cpu_id=$id; $this->cpu_brand=$b; $this->cpu_model=$m; $this->cpu_socket=$s; $this->cpu_cores=$c;
                         $this->cpu_threads=$t; $this->cpu_frequency=$f; $this->cpu_memoryType=$mt; $this->cpu_includesGpu=$iG;
                         $this->cpu_gpuModel=$gM; $this->cpu_gpuShaders=$gS; $this->cpu_gpuFrequency=$gF; $this->cpu_price=$p;
-                        $this->cpu_score=$sc; $this->cpu_consumption=$cons; $this->cpu_gen=$g; 
+                        $this->cpu_score=$sc; $this->cpu_consumption=$cons; $this->cpu_gen=$g; $this->img=$im; 
                     }
                     function queryCpu($price, $need, $var){
                         require("../php/conexion.php");
@@ -192,7 +305,7 @@
                         $query = 'SELECT * FROM processors WHERE price <= ' . $price . ' AND gen >= ' . $need->minCpu . ' AND brand = "'. $var . '" ORDER BY score DESC LIMIT 1';
                         
                         foreach ($con->query($query) as $row){
-                            $this->setValues($row['id_cpu'], $row['brand'], $row['model'], $row['socket'], $row['cpu_cores'], $row['threads'], $row['frequency'], $row['Memory Type'], $row['GPU included'], $row['GPU model'], $row['GPU shaders'], $row['GPU frequency'], $row['price'], $row['score'], $row['Consumption'], $row['gen']); 
+                            $this->setValues($row['id_cpu'], $row['brand'], $row['model'], $row['socket'], $row['cpu_cores'], $row['threads'], $row['frequency'], $row['Memory Type'], $row['GPU included'], $row['GPU model'], $row['GPU shaders'], $row['GPU frequency'], $row['price'], $row['score'], $row['Consumption'], $row['gen'], $row['img']); 
                         }
                     }
                 }
@@ -286,5 +399,9 @@
                 
             ?>
         </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+       
+        <script href="../recom.js"></script>
     </body>
 </html>

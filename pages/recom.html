@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="d-flex h-100 html">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recomendaciones</title>
+        <link rel="stylesheet" href="../stylesheet.css">
+    </head>
+    <body class="d-flex w-100 m-0 bg-image flex-column">
+        <!-- ///////////   NAVBAR    // //////////////////  -->
+        <nav class=" d-flex border-bottom border-primary bg-dark">
+            <div class="d-flex w-100 p-2 align-items-center">
+                <img src="../images/icons8-nfc-n-60.png">
+                <h1 class="mx-3 fs-3 text-white">NeedPc?</h1>
+                <a href="login.html" class="ms-auto" style="width: 64px;height: 64px;">
+                    <img src="../images/icons8-user-64.png" alt="profile">
+                </a>
+            </div>
+        </nav>
+        
+        <div id="main" class="bg-dark h-100 p-5 mx-custom text-white">
+            
+            <!--////////////  Formulario /////////////-->
+            <form class="d-flex flex-column " method="post">
+                
+                <h2 class="text-center">Want to build something today?</h2>
+                
+
+                <!-- NECESSITY -->
+                <h2>Select a necessity</h2>
+                
+                    <label for="videoGames">Video videoGames</label>
+                        
+                    <input type="radio" name="necessity" value="videoGames">
+                    <label for="streaming">Streaming</label>
+                    <input type="radio" name="necessity" value="streaming">
+                    <label for="dessign">Design</label>
+                    <input type="radio" name="necessity" value="design">
+                    <label for="office">Office</label>
+                    <input type="radio" name="necessity" value="videoGames">
+                
+                <!-- BUDGET -->
+                <h2>Select a budget</h2>
+                
+                <select name="budget">
+                    <option value="1000">1000</option>
+                    <option value="2000">2000</option>
+                    <option value="5000">5000</option>
+                    <option value="600">Other</option>
+                </select>
+
+                <input type="text" name="mm" id="tfBudget">
+
+                <!--
+                <SELect name="type">
+                    <option value="cpu">CCPU</option>
+                    <option value="motherboards">MOTHERBOARD</option>
+                    <option value="ram">RAM</option>
+                    <option value="sto">STO</option>
+                    <option value="gpu">GPU</option>
+                    <option value="psu">PSU</option>
+                </SELect>
+                -->
+             
+                <BUTton name="btn">Need</BUTton>     
+                
+                <div class="bg-primary" style="height: 150px; width: 150px;"></div>
+            </form>
+          </div>
+          <img src="../images/icons8-control-64.png" alt="Control">
+          <p>Esta madre aun jala?</p>
+          </body>
+          </html>
+          
